@@ -1,5 +1,6 @@
 import axios from "axios";
 import React from "react";
+import Loader from "react-loader-spinner";
 
 export default function Weather(props) {
   function showWeather(response) {
