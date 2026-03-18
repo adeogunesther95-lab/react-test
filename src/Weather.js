@@ -10,16 +10,4 @@ export default function Weather(props) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(showWeather);
-
-  return (
-    <div>
-      <TailSpin
-        height="80"
-        width="80"
-        color="#4fa94d"
-        ariaLabel="tail-spin-loading"
-        visible={loading}
-      />
-    </div>
-  );
 }
