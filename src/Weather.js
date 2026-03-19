@@ -1,6 +1,6 @@
 import axios from "axios";
 import React from "react";
-import Loader from "react-loader-spinner";
+import { ThreeDots } from "react-loader-spinner";
 
 export default function Weather(props) {
   function showWeather(response) {
@@ -10,4 +10,16 @@ export default function Weather(props) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(showWeather);
+  return (
+    <ThreeDots
+      height={80}
+      width={100}
+      radius={9}
+      color="red"
+      ariaLabel="three-dots-loading"
+      wrapperStyle={{ margin: "20px" }}
+      wrapperClass="custom-loader"
+      visible={true}
+    />
+  );
 }
